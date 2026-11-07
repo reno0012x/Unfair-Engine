@@ -426,3 +426,14 @@
 - คัดออกด้วย.gitignore: bin/EXE/runtime/toolchains/node_modules/generated/QAoutputs/localconfigsและnestedupstreamclone; stagedcheckไม่มีpathหลุด/ไม่มีไฟล์>=50MiB และgitgrepไม่พบlive-tokenpatterns; ไม่ตัดupstreamcrypto.key/test.zip fixtures
 - ไฟล์ที่เพิ่ม: .gitignore/.gitattributes/README.md; ไม่มีการแก้enginecodeในงานนี้; ไม่สร้างReleaseหรืออัปโหลดinstallerbinaryในGitrepo ตัวinstallerที่buildไว้ยังอยู่ในเครื่อง; ไม่มีงานค้างสำหรับคำขอuploadPrivate
 
+
+## งาน UNFAIR-011: GitHub พร้อมดาวน์โหลดใช้งานและรูปพรีวิว
+
+- สถานะ: In progress
+- แก้ความเข้าใจจาก010: ผู้ใช้ต้องการแพ็กเกจพร้อมเปิดใช้และรูปบนGitHub ไม่ใช่เฉพาะsource; repoยังคงPrivate
+- UNFAIR-011.1 mainเลือกภาพจริง/READMEdownload+วิธีใช้; UNFAIR-011.2 review_workflowทำportableZIPจากpayloadmanifestที่ตรวจแล้ว; UNFAIR-011.3 mainเผยแพร่PrivateGitHubReleaseมีinstaller/portable/MCP/README/checksums และตรวจdownloadhash
+- 2026-11-07T10:18:22.6342897+07:00 — installerล่าสุดV9และMCPZIPที่ผ่านQAมีอยู่ในเครื่อง จะอัปReleasesแทนเก็บgeneratedbinaryปะปนsource; รูปพรีวิวcopyเฉพาะภาพโปรแกรมจริงที่ไม่มีconnectiontoken
+
+
+- 2026-11-07T10:22:24.6206800+07:00 — READMEมีdownloadInstaller/Portable/MCPพร้อมภาพจริง3ภาพแล้ว; portableagentสร้างZIP91,591,572bytesจากpayloadmanifestมี58entries+_sc_/runtime/assets/licenses hash00ee2d0367fa3b9263e52b2125aea67353aeba82ce016db0eadbc2ea0cabf086 ตรวจทุกentryและrebuildได้hashเดิม; mainเตรียมRelease notes/คู่มือไทย/SHA256SUMS จะอัปPrivateReleaseแล้วdownloadกลับมาตรวจพร้อมเปิดengineจากZIP
+

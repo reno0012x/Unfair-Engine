@@ -1,0 +1,7 @@
+# The upstream Visual Studio [Rr]elease*/ rule also matches our release docs.
+!releases/
+!releases/*.md
+!releases/*.txt
+
+# Rebuildable portable artifacts belong in GitHub Releases.
+/packaging/dist/

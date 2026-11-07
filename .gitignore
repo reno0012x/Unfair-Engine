@@ -25,6 +25,7 @@
 # Rebuildable distributions, nested upstream checkout, and packaging caches.
 /Godot Engine/unfair/installer/build/
 /Godot Engine/unfair/installer/dist/
+/Godot Engine/unfair/packaging/dist/
 /Godot Engine/unfair/mcp/upstream/
 /Godot Engine/unfair/mcp/dist/
 /Godot Engine/unfair/mcp/server/build/

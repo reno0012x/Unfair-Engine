@@ -4,6 +4,44 @@ Unfair เป็น fork ของ Godot Engine ที่ปรับแบร�
 MCP tools และเครื่องมือสร้างตัวติดตั้ง Windows โดยยังใช้ GDScript และรูปแบบโปรเจกต์
 ของ Godot ตามเดิม
 
+## ดาวน์โหลดไปใช้ได้เลย — Windows x64
+
+**ไม่ต้อง build เอง:** เปิด [หน้า Releases](https://github.com/reno0012x/Unfair-Engine/releases/tag/v4.8.0-beta-unfair.9)
+แล้วเลือกไฟล์ในตารางนี้
+
+| ต้องการ | ดาวน์โหลด | วิธีใช้ |
+| --- | --- | --- |
+| ติดตั้ง Unfair พร้อมตัวถอนโปรแกรม | [install.exe](https://github.com/reno0012x/Unfair-Engine/releases/download/v4.8.0-beta-unfair.9/install.exe) | เปิด installer แล้วเรียก Unfair จาก Start Menu |
+| แตก ZIP แล้วเปิดใช้ ไม่ต้องติดตั้ง | [Unfair Portable](https://github.com/reno0012x/Unfair-Engine/releases/download/v4.8.0-beta-unfair.9/Unfair-4.8-beta-windows-x64-portable.zip) | แตก ZIP ทั้งโฟลเดอร์ แล้วเปิด `Unfair.exe` |
+| ให้ AI client ควบคุม Unfair ผ่าน MCP | [Unfair MCP พร้อม Node runtime](https://github.com/reno0012x/Unfair-Engine/releases/download/v4.8.0-beta-unfair.9/unfair-mcp-1.0.0-windows-x64.zip) | แตก ZIP แล้วใช้ `install.ps1` ตามคู่มือ |
+| คู่มือติดตั้งและเริ่มใช้ | [README-Windows-th.md](https://github.com/reno0012x/Unfair-Engine/releases/download/v4.8.0-beta-unfair.9/README-Windows-th.md) | วิธีติดตั้ง, portable, MCP และถอนโปรแกรม |
+| ตรวจไฟล์ที่ดาวน์โหลด | [SHA256SUMS.txt](https://github.com/reno0012x/Unfair-Engine/releases/download/v4.8.0-beta-unfair.9/SHA256SUMS.txt) | เปรียบเทียบด้วย `Get-FileHash -Algorithm SHA256` |
+
+แพ็กเกจ Unfair มี EXE, DLL, รูป/asset, tools, licenses และ Python runtime ครบ
+เป็นไฟล์และโฟลเดอร์ปกติ ส่วน MCP bundle มี Node และ dependencies พร้อมใช้
+**อย่าดาวน์โหลดเฉพาะ `Unfair.exe` แยกไฟล์เดียว** และ ZIP “Source code” ของ GitHub
+เป็นซอร์สสำหรับนักพัฒนา ให้เลือก Installer หรือ Portable หากต้องการเปิดใช้ทันที
+
+รีโปนี้เป็น **Private** ผู้ดาวน์โหลดต้องล็อกอินบัญชี GitHub ที่มีสิทธิ์เข้าถึงรีโป
+รุ่นนี้เป็น Windows x64 beta/developer build ที่ยังไม่ได้ code-sign
+
+## ภาพโปรแกรมจริง
+
+ภาพจากโปรแกรมและโปรเจกต์ทดสอบ ไม่ใช่ mockup; assets โลโก้และพื้นหลังที่ใช้ build
+ถูกเก็บอยู่ใน source ด้วย
+
+### Editor และ toolbar
+
+![Unfair Editor พร้อม AI Assist, Content Browser และ Undo/Redo](docs/images/editor.png)
+
+### AI Assistance
+
+![หน้าต่าง AI Assistance](docs/images/ai-assistance.png)
+
+### Loading โปรเจกต์
+
+![Loading โปรเจกต์พร้อมภาพพื้นหลังและเครดิต Godot](docs/images/project-loading.png)
+
 ## โครงสร้างโปรเจกต์
 
 - [`Godot Engine/`](<Godot Engine/>) — engine source รวม Editor, platform,
@@ -39,10 +77,10 @@ Unfair MCP ใช้ TypeScript/Node; source และ lockfile อยู่ใ�
 [`คู่มือ MCP`](<Godot Engine/unfair/mcp/README-th.md>) และ
 [`packaging`](<Godot Engine/unfair/mcp/packaging/README.md>) ก่อน build/ติดตั้ง
 
-Repository เก็บ source, assets และสคริปต์ที่จำเป็น ส่วน EXE/DLL ที่ build แล้ว,
-toolchains, dependencies ที่ดาวน์โหลด, caches, QA exports และ connection config
-ส่วนตัวถูกตัดออกด้วย `.gitignore` เอกสาร validation อ้างถึงผลทดสอบจากเครื่องพัฒนา;
-path ของผลลัพธ์ที่ถูก ignore จะต้องสร้างใหม่เมื่อรัน QA
+หน้า Code เก็บ source, รูปพรีวิว, assets และสคริปต์ ส่วนโปรแกรมที่ build แล้วพร้อม
+runtime/dependencies ดาวน์โหลดได้จาก Releases ด้านบน Toolchains, caches,
+QA exports และ connection config ส่วนตัวไม่ถูกอัปโหลด เอกสาร validation อ้างถึง
+ผลทดสอบจากเครื่องพัฒนา; path ของผลลัพธ์ QA จะต้องสร้างใหม่เมื่อรันทดสอบ
 
 ## เครดิตและสิทธิ์ใช้งาน
 
