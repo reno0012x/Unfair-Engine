@@ -1,6 +1,6 @@
 # สถานะงาน
 
-อัปเดต: 2569-11-07T10:04:22+07:00
+อัปเดต: 2026-11-07T10:16:16+07:00
 
 ## งาน SKILL-001: สร้างสกิลแบ่งงานและบันทึกความคืบหน้า
 
@@ -408,7 +408,7 @@
 
 ## งาน UNFAIR-010: อัปโหลด source ไป GitHub Private
 
-- สถานะ: In progress
+- สถานะ: Done — https://github.com/reno0012x/Unfair-Engine (Private, main)
 - เป้าหมาย: สร้างrepoใหม่แบบPrivateในบัญชีGitHubที่เชื่อมต่อและpushsourceโปรเจกต์ พร้อมตรวจvisibility/commitหลังpush
 - UNFAIR-010.1 mainตรวจauth/reponame + review_workflowตรวจinventoryแบบread-only; UNFAIR-010.2 main.gitignore/README/localcommit; UNFAIR-010.3 mainสร้างPrivateก่อนpushและตรวจremoteSHA
 - ขอบเขตsource: Godot Engine/ engine+UnfairUI/MCP/installer source, assetsที่ใช้build, ai-workflow และเอกสาร; ไม่รวมbin/build/cache/node_modules/QAexports/localconnections/SDK/downloadedruntimes
@@ -416,4 +416,13 @@
 
 
 - 2026-11-07T10:13:25.8048397+07:00 — ผู้ใช้ยืนยันdevice loginแล้ว GitHubCLIล็อกอินreno0012xสำเร็จ; CLIofficialv2.103.3ดาวน์โหลดตรงreleaseและSHA256ตรงchecksums; เตรียมGitrootbranchmain/README/.gitignoreและstage14,630files330.03MiB ไม่มีfiles>=50MiB/ไม่มีbin,node_modules,qa-output,.godot,.gitหรือtoolchainหลุด; inventoryagentยืนยันupstreamtest.zip/crypto.keyเป็นfixturesจึงเก็บไว้
+
+
+### ผลส่งมอบ UNFAIR-010
+
+- 2026-11-07T10:16:16.5088771+07:00 — สร้างhttps://github.com/reno0012x/Unfair-Engine แบบPrivateตั้งแต่เริ่ม และpushbranchmainสำเร็จ; GitHubCLIAPIยืนยันprivate=true/visibility=private และconnectorGitHubยืนยันvisibility=privateอีกครั้ง
+- Sourcecommit6a4e992f658af22dc8ae592f59e1e45efb504283ตรงremoteSHA; localGitrootติดoriginและtrackingmainแล้ว; ใช้ชื่อcommitreno0012xกับGitHubnoreplyemailเพื่อไม่เผยอีเมลส่วนตัว
+- อัปโหลด14,630filesประมาณ330.03MiB: engine/editorUI/AI/MCP/installer source, branding/loadingassets, ai-workflow, README/WORK_STATUS/license/noticesครบ; READMErootอธิบายโครงสร้าง/buildและupstreamcredits
+- คัดออกด้วย.gitignore: bin/EXE/runtime/toolchains/node_modules/generated/QAoutputs/localconfigsและnestedupstreamclone; stagedcheckไม่มีpathหลุด/ไม่มีไฟล์>=50MiB และgitgrepไม่พบlive-tokenpatterns; ไม่ตัดupstreamcrypto.key/test.zip fixtures
+- ไฟล์ที่เพิ่ม: .gitignore/.gitattributes/README.md; ไม่มีการแก้enginecodeในงานนี้; ไม่สร้างReleaseหรืออัปโหลดinstallerbinaryในGitrepo ตัวinstallerที่buildไว้ยังอยู่ในเครื่อง; ไม่มีงานค้างสำหรับคำขอuploadPrivate
 
