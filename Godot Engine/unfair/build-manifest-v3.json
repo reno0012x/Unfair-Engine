@@ -1,0 +1,30 @@
+{
+  "name": "Unfair",
+  "revision": "UNFAIR-003",
+  "version": "4.8.beta.custom_build",
+  "build": "Windows x86_64 developer; tests=yes angle=yes optimize=none",
+  "sha256": "AA0BBAA4A6C59D8271F0932BF52303AE7B6AA511C71D2A388BC6A8B2AF125958",
+  "executable": "bin/Unfair.exe",
+  "console": "bin/Unfair.console.exe",
+  "native_test_cases_passed": 1434,
+  "native_test_cases_failed": 0,
+  "native_test_cases_skipped": 3,
+  "assertions_passed": 425416,
+  "gdscript_smoke": "passed",
+  "workbench_native_qa": "passed",
+  "project_manager_native_qa": "passed",
+  "widths_verified": [
+    1600,
+    1152
+  ],
+  "startup_first_observed_caption_dark": true,
+  "native_caption_min_max_close_visible": true,
+  "titlebar_dark_light_verified": true,
+  "exact_windows11_caption_rgb_verified": false,
+  "content_drawer_output_exclusion_verified": true,
+  "transport_run_pause_stop_verified": true,
+  "minimized_script_restore_and_return_all_verified": true,
+  "screenshots": "unfair/smoke/qa-output/",
+  "existing_layout_adoption": "Windows > Reset to Unfair Workspace",
+  "content_shortcut": "Ctrl+Space"
+}

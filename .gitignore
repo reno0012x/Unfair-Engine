@@ -1,0 +1,49 @@
+# Local toolchains, packaged executables, and generated build output.
+/.build-tools/
+/Unfair Engine/
+/unfair-installer-test-*/
+/*.log
+/unfair-v6-installed-test-path.txt
+**/bin/
+**/node_modules/
+**/__pycache__/
+**/.godot/
+**/.import/
+*.pyc
+*.gen.*
+.sconsign*.dblite
+.scons_env.json
+.scons_node_count
+
+# Unfair QA output and test-installation state (may contain local credentials).
+**/qa-output/
+/Godot Engine/unfair/smoke/loading-fixture/
+/Godot Engine/unfair/smoke/*-qa-result.json
+/Godot Engine/unfair/smoke/unfair-*.png
+/Godot Engine/unfair/smoke/unfair-*.png.import
+
+# Rebuildable distributions, nested upstream checkout, and packaging caches.
+/Godot Engine/unfair/installer/build/
+/Godot Engine/unfair/installer/dist/
+/Godot Engine/unfair/mcp/upstream/
+/Godot Engine/unfair/mcp/dist/
+/Godot Engine/unfair/mcp/server/build/
+/Godot Engine/unfair/mcp/packaging/staging/
+/Godot Engine/unfair/mcp/packaging/archives/
+/Godot Engine/unfair/mcp/packaging/.npm-cache/
+/Godot Engine/unfair/mcp/packaging/build-record.json
+
+# Local editor/agent configuration and private connection files.
+/.codex/
+/.agents/
+/.env
+/.env.*
+**/connection-*.json
+**/client-config.json
+**/installation.json
+**/user-config-before.json
+
+# Keep upstream test archives and crypto fixtures; do not ignore *.zip/*.key.
+.DS_Store
+Thumbs.db
+Desktop.ini

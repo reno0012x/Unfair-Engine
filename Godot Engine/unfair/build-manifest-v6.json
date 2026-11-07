@@ -1,0 +1,18 @@
+{
+  "name": "Unfair",
+  "revision": "UNFAIR-006",
+  "version": "4.8.beta.custom_build",
+  "created": "2026-11-07T07:37:05.1428299+07:00",
+  "executable": "bin/Unfair.exe",
+  "sha256": "4cfa0382be31960db26cce579a7d5957871417406c20aebcc6ac9734d9fd3d49",
+  "installer": "unfair/installer/dist/install.exe",
+  "installer_sha256": "cc22f744dee19853cd2fbae4f8d27a9a8e43e7142a28d33a1bd7a0fd41c7e761",
+  "features": [
+    "responsive AI Assistance",
+    "actual child alpha/native corner mask",
+    "generated artwork real loading",
+    "visible-file per-user install/uninstall",
+    "bundled Python"
+  ],
+  "validation": "unfair/VALIDATION-v6.md"
+}

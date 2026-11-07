@@ -1,0 +1,9 @@
+{
+  "brand": "Unfair",
+  "concept": "unfair-ai-refined-v2.png",
+  "generation": "Built-in image_gen refinement of user reference 5; transparent white angular U",
+  "production": "Reference-faithful geometric U with triangular notch and long diagonal slit; Inter Bold wordmark outlines",
+  "font_license": "thirdparty/fonts/LICENSE.Inter.txt",
+  "regenerate": "python unfair/generate_brand_assets.py (Pillow, fontTools, Brotli required)",
+  "originals": "unfair/original-assets; Godot legal notices retained"
+}

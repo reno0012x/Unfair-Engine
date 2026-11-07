@@ -1,0 +1,6 @@
+interface:
+  display_name: "Parallel Work Log"
+  short_description: "Divide tasks, delegate, and save Markdown progress"
+  default_prompt: "Use $parallel-work-log to divide this project task, delegate independent work, and keep WORK_STATUS.md current."
+policy:
+  allow_implicit_invocation: true

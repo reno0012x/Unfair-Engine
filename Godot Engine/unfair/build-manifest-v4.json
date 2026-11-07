@@ -1,0 +1,39 @@
+{
+  "name": "Unfair",
+  "revision": "UNFAIR-004",
+  "version": "4.8.beta.custom_build",
+  "build": "Windows x86_64 developer; tests=yes angle=yes optimize=none",
+  "created": "2026-11-06T23:05:15.6841404+07:00",
+  "sha256": "EFE6C465D4CAE16D911C9479295C594D46DA20D60200499586F15BA0DA273563",
+  "executable": "bin/Unfair.exe",
+  "console": "bin/Unfair.console.exe",
+  "native_test_cases_passed": 1434,
+  "native_test_cases_failed": 0,
+  "native_test_cases_skipped": 3,
+  "assertions_passed": 425416,
+  "gdscript_smoke": "passed",
+  "workbench_native_qa": "passed",
+  "project_manager_native_qa": "passed",
+  "undo_redo_existing_history_verified": true,
+  "bottom_tools_detach_redock_verified": [
+    "Output",
+    "Debugger",
+    "Audio",
+    "Animation",
+    "Shader Editor"
+  ],
+  "pm_about_settings_active_lifecycle_verified": true,
+  "stock_godot_icon_display_replaced": true,
+  "stock_project_file_sha256_unchanged": "6C80384360A5B269D1054BFB27241258154E2CC8167C522016FDC1820E84E0F8",
+  "header_brand_glyph_px": 36,
+  "toolbar_icon_max_px": 16,
+  "widths_verified": [
+    1600,
+    1152
+  ],
+  "titlebar_dark_light_verified": true,
+  "exact_windows11_caption_rgb_verified": false,
+  "screenshots": "unfair/smoke/qa-output/unfair-v4-*.png",
+  "backup": "bin/Unfair.before-navigation-v4.exe",
+  "existing_layout_adoption": "Preserved; optional Windows > Reset to Unfair Workspace"
+}

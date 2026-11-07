@@ -1,0 +1,27 @@
+{
+  "name": "Unfair",
+  "revision": "UNFAIR-002",
+  "version": "4.8.beta.custom_build",
+  "build": "Windows x86_64 developer; tests=yes angle=yes optimize=none",
+  "sha256": "4BA02E743D187681EB5BBEDF8A6BF77057D87103D9B947A8E1F10033EDBAFA4D",
+  "executable": "bin/Unfair.exe",
+  "console": "bin/Unfair.console.exe",
+  "native_test_cases_passed": 1434,
+  "native_test_cases_failed": 0,
+  "native_test_cases_skipped": 3,
+  "assertions_passed": 425416,
+  "gdscript_smoke": "passed",
+  "project_manager_native_qa": "passed",
+  "workbench_native_qa": "passed",
+  "widths_verified": [
+    1600,
+    1152
+  ],
+  "titlebar_dark_light_verified": true,
+  "exact_windows11_caption_rgb_verified": false,
+  "script_detach_and_return_verified": true,
+  "folder_path_confirmation_verified": true,
+  "screenshots": "unfair/smoke/qa-output/",
+  "existing_layout_adoption": "Windows > Reset to Unfair Workspace",
+  "notes": "Existing project icons/layouts and custom preview colors preserved."
+}

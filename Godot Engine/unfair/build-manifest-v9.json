@@ -1,0 +1,11 @@
+{
+  "name": "Unfair",
+  "revision": "UNFAIR-009",
+  "created": "2026-11-07T10:03:45.7658396+07:00",
+  "executable": "bin/Unfair.exe",
+  "sha256": "f43eb7f01d345429a6c0801db0fb0e01d9574a27dd15957f5df8e79f1abb9f13",
+  "installer": "unfair/installer/dist/install.exe",
+  "installer_sha256": "ba65012e6798ec5ba7bd62e4a0d5750e5370de3a5634abe2f904fc4ffe6e7b26",
+  "change": "AI Assist vertical SIZE_FILL matches Content Browser",
+  "validation": "unfair/VALIDATION-v9.md"
+}

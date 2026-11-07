@@ -1,0 +1,17 @@
+{
+  "name": "Unfair",
+  "revision": "UNFAIR-008",
+  "version": "4.8.beta.custom_build",
+  "created": "2026-11-07T09:47:17.6733141+07:00",
+  "executable": "bin/Unfair.exe",
+  "sha256": "06d11cd72701dc78c3d638398612f9f577d5544294053bd38b87bd6e3427703c",
+  "installer": "unfair/installer/dist/install.exe",
+  "installer_sha256": "eb762646454e79d0e3cb462af30ac633dd9454aa8ed66ce25e012160ff622534",
+  "features": [
+    "AI Assist before Content Browser / Undo / Redo",
+    "compact responsive command bar",
+    "AI layout with collapsed connection settings",
+    "opaque native DWM frame with rounded child card"
+  ],
+  "validation": "unfair/VALIDATION-v8.md"
+}
