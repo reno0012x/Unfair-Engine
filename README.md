@@ -38,6 +38,10 @@ MCP tools และเครื่องมือสร้างตัวติ�
 
 ![หน้าต่าง AI Assistance](docs/images/ai-assistance.png)
 
+### Project Manager
+
+![คลังโปรเจกต์ Unfair](docs/images/project-manager.png)
+
 ### Loading โปรเจกต์
 
 ![Loading โปรเจกต์พร้อมภาพพื้นหลังและเครดิต Godot](docs/images/project-loading.png)

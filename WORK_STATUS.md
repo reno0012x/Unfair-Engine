@@ -437,3 +437,9 @@
 
 - 2026-11-07T10:22:24.6206800+07:00 — READMEมีdownloadInstaller/Portable/MCPพร้อมภาพจริง3ภาพแล้ว; portableagentสร้างZIP91,591,572bytesจากpayloadmanifestมี58entries+_sc_/runtime/assets/licenses hash00ee2d0367fa3b9263e52b2125aea67353aeba82ce016db0eadbc2ea0cabf086 ตรวจทุกentryและrebuildได้hashเดิม; mainเตรียมRelease notes/คู่มือไทย/SHA256SUMS จะอัปPrivateReleaseแล้วdownloadกลับมาตรวจพร้อมเปิดengineจากZIP
 
+
+- 2026-11-07T10:26:52.9633179+07:00 — ไฟล์5ชิ้นอัปdraftPrivateReleaseแล้ว GitHubdigestตรงlocalทุกชิ้น และdownloadกลับตรวจhashตรงครบ; แตกPortable+MCPจากGitHubจริง แล้วใช้Python/Nodeที่bundleมาทดสอบengine+16MCPtoolsผ่าน รวมGDScript/scene/UID/run/stop/EOF; installerQAรอบแรกเจอfalsepositiveจากการนับprocessUnfairทั้งหมดระหว่างMCPtest จึงcleanupเฉพาะtestinstallและรันinstallerQAซ้ำแบบลำดับ ไม่เปลี่ยนproductioninstaller
+
+
+- 2026-11-07T10:28:38.2369029+07:00 — downloadกลับครบ5assets hashตรง; Portableที่ดาวน์โหลดเปิดeditorและรันnativeMCP14+2toolsผ่านด้วยPython/Nodeจากแพ็กเกจจริง; installerดาวน์โหลดผ่านinstall/upgrade/uninstall+allpayloadhash/visibleและเก็บnestedprojectsentinelหลังรันแบบลำดับ; READMEมีภาพจริง4ภาพพร้อมdownloadแยกSource/Installer/Portable/MCPชัดเจน; เอกสารreleaseVALIDATIONพร้อมก่อนpublish
+
