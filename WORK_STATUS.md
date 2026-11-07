@@ -1,6 +1,6 @@
 # สถานะงาน
 
-อัปเดต: 2026-11-07T10:16:16+07:00
+อัปเดต: 2026-11-07T10:30:04+07:00
 
 ## งาน SKILL-001: สร้างสกิลแบ่งงานและบันทึกความคืบหน้า
 
@@ -429,7 +429,7 @@
 
 ## งาน UNFAIR-011: GitHub พร้อมดาวน์โหลดใช้งานและรูปพรีวิว
 
-- สถานะ: In progress
+- สถานะ: Done — Private Release v4.8.0-beta-unfair.9 พร้อมใช้งาน
 - แก้ความเข้าใจจาก010: ผู้ใช้ต้องการแพ็กเกจพร้อมเปิดใช้และรูปบนGitHub ไม่ใช่เฉพาะsource; repoยังคงPrivate
 - UNFAIR-011.1 mainเลือกภาพจริง/READMEdownload+วิธีใช้; UNFAIR-011.2 review_workflowทำportableZIPจากpayloadmanifestที่ตรวจแล้ว; UNFAIR-011.3 mainเผยแพร่PrivateGitHubReleaseมีinstaller/portable/MCP/README/checksums และตรวจdownloadhash
 - 2026-11-07T10:18:22.6342897+07:00 — installerล่าสุดV9และMCPZIPที่ผ่านQAมีอยู่ในเครื่อง จะอัปReleasesแทนเก็บgeneratedbinaryปะปนsource; รูปพรีวิวcopyเฉพาะภาพโปรแกรมจริงที่ไม่มีconnectiontoken
@@ -442,4 +442,13 @@
 
 
 - 2026-11-07T10:28:38.2369029+07:00 — downloadกลับครบ5assets hashตรง; Portableที่ดาวน์โหลดเปิดeditorและรันnativeMCP14+2toolsผ่านด้วยPython/Nodeจากแพ็กเกจจริง; installerดาวน์โหลดผ่านinstall/upgrade/uninstall+allpayloadhash/visibleและเก็บnestedprojectsentinelหลังรันแบบลำดับ; READMEมีภาพจริง4ภาพพร้อมdownloadแยกSource/Installer/Portable/MCPชัดเจน; เอกสารreleaseVALIDATIONพร้อมก่อนpublish
+
+
+### ผลส่งมอบ UNFAIR-011
+
+- 2026-11-07T10:30:04.9694444+07:00 — เผยแพร่Pre-release (isDraft=false) ที่https://github.com/reno0012x/Unfair-Engine/releases/tag/v4.8.0-beta-unfair.9 แล้ว; repoยืนยันprivate=true/visibility=privateตลอด; มี5assetsครบ installer71,505,351B / portable91,591,572B / MCP38,464,566B / คู่มือไทย / SHA256SUMS
+- ตรวจdownloadURLversionedทั้ง5และdownloadหลังpublishผ่าน; installerSHAba65012e6798ec5ba7bd62e4a0d5750e5370de3a5634abe2f904fc4ffe6e7b26, portableSHA00ee2d0367fa3b9263e52b2125aea67353aeba82ce016db0eadbc2ea0cabf086, MCPSHAe411e8d27b023e963a1a75e6d30b1eba78e7989bb27282d988fe2b0b24583dc6
+- READMEหน้าแรกมีปุ่มลิงก์download/วิธีใช้+ภาพจริงEditor,AI,ProjectManager,Loading4ภาพ ตรวจGitHubblobSHAของทุกภาพตรงlocal; logo/backgroundsourceเดิมอยู่ครบ
+- portable+MCPที่downloadจากGitHubจริงผ่านnative16toolsด้วยbundledPython/Node; downloadedinstallerผ่านinstall/upgrade/uninstall+hash/visibilityและเก็บsentinel; ไม่ต้องbuildsourceเพื่อใช้Installer/Portable
+- ไฟล์ใหม่: unfair/packaging/build-portable.ps1, unfair/.gitignoreสำหรับrelease-docs, unfair/releases/{notes,quickstart,checksums,validation}, docs/images4รูป; .gitignoreยังกันcache/privateconfig/binaryartifactsไม่ให้ปะปนsource โดยbinariesอยู่Releasesครบ; ไม่มีงานค้าง — ดาวน์โหลดInstallerหรือPortableจากRelease และผู้ดาวน์โหลดต้องมีสิทธิ์repoPrivate
 
