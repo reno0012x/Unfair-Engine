@@ -1,6 +1,6 @@
 # สถานะงาน
 
-อัปเดต: 2026-11-07T10:30:04+07:00
+อัปเดต: 2026-11-07T12:25:14+07:00
 
 ## งาน SKILL-001: สร้างสกิลแบ่งงานและบันทึกความคืบหน้า
 
@@ -451,4 +451,22 @@
 - READMEหน้าแรกมีปุ่มลิงก์download/วิธีใช้+ภาพจริงEditor,AI,ProjectManager,Loading4ภาพ ตรวจGitHubblobSHAของทุกภาพตรงlocal; logo/backgroundsourceเดิมอยู่ครบ
 - portable+MCPที่downloadจากGitHubจริงผ่านnative16toolsด้วยbundledPython/Node; downloadedinstallerผ่านinstall/upgrade/uninstall+hash/visibilityและเก็บsentinel; ไม่ต้องbuildsourceเพื่อใช้Installer/Portable
 - ไฟล์ใหม่: unfair/packaging/build-portable.ps1, unfair/.gitignoreสำหรับrelease-docs, unfair/releases/{notes,quickstart,checksums,validation}, docs/images4รูป; .gitignoreยังกันcache/privateconfig/binaryartifactsไม่ให้ปะปนsource โดยbinariesอยู่Releasesครบ; ไม่มีงานค้าง — ดาวน์โหลดInstallerหรือPortableจากRelease และผู้ดาวน์โหลดต้องมีสิทธิ์repoPrivate
+
+
+## งาน UNFAIR-012: ตรวจ MCP ใน Codex และติดตั้งสกิลใช้งาน
+
+- สถานะ: Done — MCP ใช้งานจริงได้และติดตั้ง Unfair skill แล้ว
+- แผน: mainเรียกMCPจริงตรวจconnection/engine, mainสร้างunfair-engine-mcp skill+installerbackup, review_workflowตรวจskillworkflowแบบread-only, mainvalidate/install/hashตรวจผล
+- 2026-11-07T12:22:40.8152591+07:00 — Codexturnนี้เห็นmcp__unfair_engineครบ16toolsและเรียกget_engine_diagnosticsสำเร็จจริง(serverunfair-mcp1.0.0→Unfair4.8/Node24.22.1); พบมีparallel-work-logติดตั้งแล้ว แต่ไม่มีสกิลUnfairเฉพาะ จึงใช้skill-creatorสร้างเฉพาะworkflowCLI/readwrite/livebridgeข้อจำกัด ไม่เปลี่ยนMCPserverconfigหรือprojectเกม
+
+
+- 2026-11-07T12:24:17.8460429+07:00 — MCPในCodexจริงตอบget_engine_diagnostics/get_godot_version/search_toolsผ่าน และมี16toolsพร้อม; สร้างskillunfair-engine-mcpแบบautomaticdiscovery+MCPdependency พร้อมbackupและinstall-unfair-skill.ps1 ไม่เปลี่ยนMCPserverconfig
+- quick_validateมาตรฐานผ่าน(frontmatter/name/scaffold), YAMLmetadataผ่าน; installerisolatedinstall/repeatinstallผ่านและปฏิเสธไฟล์ที่ผู้ใช้แก้โดยpreservehash; ติดตั้งจริงC:/Users/LEONIDASxII/.codex/skills/unfair-engine-mcpแล้วhashตรงsource2ไฟล์ และMCPconfig+parallel-work-logเดิมhashไม่เปลี่ยน
+
+
+### ผลส่งมอบ UNFAIR-012
+
+- 2026-11-07T12:25:14.6199106+07:00 — Codexโหลดunfair-engine16toolsแล้วเรียกdiagnostics/version/searchจริงผ่าน; installedskillunfair-engine-mcpอยู่C:/Users/LEONIDASxII/.codex/skills/unfair-engine-mcp โดยhashตรงsource; สกิลparallel-work-logเดิมอยู่ครบและvalidateผ่านด้วยUTF8
+- review_workflowตรวจread-onlyกรณีparentfolder+unsavedsceneผ่าน: ค้นrootprojectก่อน/ไม่headlessoverwriteunsavedscene/ไม่อ้างUndoหรือActivityผิดbridge; installerpreflightpreserveconflictผ่าน; quick_validateของทั้งinstalledskillsผ่าน
+- sourcebackup+installerอยู่ai-workflow/skills/unfair-engine-mcp และai-workflow/install-unfair-skill.ps1 พร้อมREADMEวิธีใช้; ไม่แก้MCPconfigหรือเกม; เปิดแชตใหม่เพื่อdiscoverสกิลใหม่ และเรียกด้วย dollar-unfair-engine-mcp (ชื่อจริงมีเครื่องหมายดอลลาร์นำหน้า) ได้; ไม่มีงานค้าง
 

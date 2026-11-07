@@ -1,0 +1,11 @@
+interface:
+  display_name: "Unfair Engine MCP"
+  short_description: "Inspect, edit and debug Unfair projects via MCP"
+  default_prompt: "Use $unfair-engine-mcp to inspect this Unfair project, choose the right tools, and verify the requested changes."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "unfair-engine"
+      description: "Installed Unfair Engine stdio MCP server"
+policy:
+  allow_implicit_invocation: true

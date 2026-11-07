@@ -61,6 +61,21 @@ MCP tools และเครื่องมือสร้างตัวติ�
 - [`ai-workflow/`](ai-workflow/) — สกิลและเครื่องมือแบ่งงาน/บันทึกสถานะ AI
 - [`WORK_STATUS.md`](WORK_STATUS.md) — ประวัติงานและหลักฐานการตรวจสอบ
 
+## สกิลสำหรับ Codex
+
+มีสกิล `unfair-engine-mcp` สำหรับเลือกใช้ MCP tools, หา root ของโปรเจกต์,
+จัดการ Scene/UID และตรวจผลโดยแยก saved-file operations ออกจาก live Editor
+หลังติดตั้ง Unfair MCP แล้ว ติดตั้งสกิลจาก source checkout นี้ด้วย:
+
+```powershell
+.\ai-workflow\install-unfair-skill.ps1
+```
+
+เปิดแชต Codex ใหม่ แล้วใช้ `$unfair-engine-mcp` หรือสั่งงาน Unfair ตามปกติ
+ติดตั้งสกิลใน user Codex skills โดยไม่เปลี่ยน MCP config และไม่ทับสกิลที่ถูกแก้เอง
+สำเนา [`SKILL.md`](ai-workflow/skills/unfair-engine-mcp/SKILL.md) อยู่ใน repo นี้
+ส่วนสกิลแบ่งงาน/บันทึกสถานะ `parallel-work-log` มีตัวติดตั้งเดิมที่ `ai-workflow/install.ps1`
+
 ## Build บน Windows
 
 ต้องมี Visual Studio C++ build tools/Windows SDK, Python และ SCons ที่รองรับ
