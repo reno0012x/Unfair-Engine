@@ -25,6 +25,23 @@ MCP tools และเครื่องมือสร้างตัวติ�
 รีโปนี้เป็น **Private** ผู้ดาวน์โหลดต้องล็อกอินบัญชี GitHub ที่มีสิทธิ์เข้าถึงรีโป
 รุ่นนี้เป็น Windows x64 beta/developer build ที่ยังไม่ได้ code-sign
 
+## ติดตั้งและเชื่อม MCP กับ Codex
+
+1. เปิด `install.exe` แล้วติดตั้ง Unfair จากนั้นเปิดโปรแกรมจาก Start Menu
+2. แตก ZIP **Unfair MCP** ทั้งโฟลเดอร์ แล้วเปิด PowerShell ในโฟลเดอร์ที่มี `install.ps1`
+3. ถ้าใช้ตำแหน่งติดตั้ง Unfair เริ่มต้น ให้รันคำสั่งนี้ หากติดตั้งไว้ที่อื่น ให้เปลี่ยนพาธใน `-UnfairPath` ให้ตรงกับ `Unfair.exe`
+
+   ```powershell
+   powershell -ExecutionPolicy Bypass -File .\install.ps1 -UnfairPath (Join-Path $env:LOCALAPPDATA 'Programs\Unfair\Unfair.exe')
+   codex mcp list
+   ```
+
+4. เมื่อเห็น `unfair-engine` ให้ปิดและเปิด Codex ใหม่ แล้วลองสั่ง “ใช้ Unfair MCP ตรวจเวอร์ชันของ Unfair”
+
+ตัวติดตั้ง MCP ใช้คำสั่ง `codex` และมี Node มาในแพ็กเกจ หากใช้ AI client อื่น ให้เพิ่ม `-Client Json` แล้วนำค่าจาก `client-config.json` ไปตั้งค่า MCP ใน client นั้น
+
+ถ้าต้องการอ่าน Scene และ Node ที่กำลังเลือกใน Editor ให้เปิดโปรเจกต์ แล้วเลือก **AI Assist → Connect → Copy MCP config** กิจกรรมที่ผ่านการเชื่อมต่อนี้จะแสดงในหน้าต่าง AI Assistance ดูวิธีตั้งค่าและตรวจปัญหาใน [คู่มือติดตั้งและเชื่อม MCP ภาษาไทย](<Godot Engine/unfair/releases/README-Windows-th.md>)
+
 ## ภาพโปรแกรมจริง
 
 ภาพจากโปรแกรมและโปรเจกต์ทดสอบ ไม่ใช่ mockup; assets โลโก้และพื้นหลังที่ใช้ build
