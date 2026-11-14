@@ -22,7 +22,6 @@ MCP tools และเครื่องมือสร้างตัวติ�
 **อย่าดาวน์โหลดเฉพาะ `Unfair.exe` แยกไฟล์เดียว** และ ZIP “Source code” ของ GitHub
 เป็นซอร์สสำหรับนักพัฒนา ให้เลือก Installer หรือ Portable หากต้องการเปิดใช้ทันที
 
-รีโปนี้เป็น **Private** ผู้ดาวน์โหลดต้องล็อกอินบัญชี GitHub ที่มีสิทธิ์เข้าถึงรีโป
 รุ่นนี้เป็น Windows x64 beta/developer build ที่ยังไม่ได้ code-sign
 
 ## ติดตั้งและเชื่อม MCP กับ Codex
@@ -38,7 +37,7 @@ MCP tools และเครื่องมือสร้างตัวติ�
 
 4. เมื่อเห็น `unfair-engine` ให้ปิดและเปิด Codex ใหม่ แล้วลองสั่ง “ใช้ Unfair MCP ตรวจเวอร์ชันของ Unfair”
 
-ตัวติดตั้ง MCP ใช้คำสั่ง `codex` และมี Node มาในแพ็กเกจ หากใช้ AI client อื่น ให้เพิ่ม `-Client Json` แล้วนำค่าจาก `client-config.json` ไปตั้งค่า MCP ใน client นั้น
+ตัวติดตั้ง MCP มี Node มาในแพ็กเกจและลงทะเบียนกับ Codex ได้โดยอัตโนมัติ สำหรับ **Google Antigravity App, Antigravity IDE, Antigravity CLI, Claude และ Cursor** ให้ใช้ `-Client Json` แล้วนำรายการจาก `client-config.json` ไปเพิ่มในไฟล์ MCP ของแอป ตาม [คู่มือภาษาไทยสำหรับ Antigravity และ AI client อื่น](<Godot Engine/unfair/releases/README-Windows-th.md#เชื่อม-google-antigravity-และ-ai-client-อื่น>)
 
 ถ้าต้องการอ่าน Scene และ Node ที่กำลังเลือกใน Editor ให้เปิดโปรเจกต์ แล้วเลือก **AI Assist → Connect → Copy MCP config** กิจกรรมที่ผ่านการเชื่อมต่อนี้จะแสดงในหน้าต่าง AI Assistance ดูวิธีตั้งค่าและตรวจปัญหาใน [คู่มือติดตั้งและเชื่อม MCP ภาษาไทย](<Godot Engine/unfair/releases/README-Windows-th.md>)
 

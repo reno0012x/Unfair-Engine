@@ -1,4 +1,4 @@
 ba65012e6798ec5ba7bd62e4a0d5750e5370de3a5634abe2f904fc4ffe6e7b26  install.exe
 00ee2d0367fa3b9263e52b2125aea67353aeba82ce016db0eadbc2ea0cabf086  Unfair-4.8-beta-windows-x64-portable.zip
 e411e8d27b023e963a1a75e6d30b1eba78e7989bb27282d988fe2b0b24583dc6  unfair-mcp-1.0.0-windows-x64.zip
-98708d845193fdb50ab56ae0c636337c655f14d43b39393104bb40cd95808266  README-Windows-th.md
+a4bff6f7ad90b11ff6285f2debb59a4f892d0d713b3ffe2946ae207767ddb450  README-Windows-th.md

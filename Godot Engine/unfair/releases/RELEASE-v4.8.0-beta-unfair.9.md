@@ -7,7 +7,7 @@
 | [install.exe](https://github.com/reno0012x/Unfair-Engine/releases/download/v4.8.0-beta-unfair.9/install.exe) | ตัวติดตั้ง Unfair พร้อมตัวถอนโปรแกรมและ Python |
 | [Unfair Portable](https://github.com/reno0012x/Unfair-Engine/releases/download/v4.8.0-beta-unfair.9/Unfair-4.8-beta-windows-x64-portable.zip) | แตกทั้งโฟลเดอร์แล้วเปิด `Unfair.exe` |
 | [Unfair MCP](https://github.com/reno0012x/Unfair-Engine/releases/download/v4.8.0-beta-unfair.9/unfair-mcp-1.0.0-windows-x64.zip) | MCP 16 เครื่องมือ พร้อม Node และสคริปต์ติดตั้ง ถอน และตรวจระบบ |
-| [คู่มือภาษาไทย](https://github.com/reno0012x/Unfair-Engine/releases/download/v4.8.0-beta-unfair.9/README-Windows-th.md) | วิธีติดตั้ง เชื่อม MCP กับ Codex ใช้ AI Assistance และถอนโปรแกรม |
+| [คู่มือภาษาไทย](https://github.com/reno0012x/Unfair-Engine/releases/download/v4.8.0-beta-unfair.9/README-Windows-th.md) | วิธีติดตั้ง และเชื่อม MCP กับ Codex, Google Antigravity และ AI client อื่น |
 | [SHA256SUMS.txt](https://github.com/reno0012x/Unfair-Engine/releases/download/v4.8.0-beta-unfair.9/SHA256SUMS.txt) | ค่า SHA-256 สำหรับตรวจไฟล์ดาวน์โหลด |
 
 ## ภาพจากโปรแกรมจริง
@@ -56,6 +56,12 @@ codex mcp list
 
 หากติดตั้ง Unfair ไว้ที่อื่น ให้ใช้พาธเต็มของ `Unfair.exe` ใน `-UnfairPath` เมื่อเห็น `unfair-engine` ให้ปิดและเปิด Codex ใหม่ แล้วลองสั่ง “ใช้ Unfair MCP ตรวจเวอร์ชันของ Unfair”
 
+## เชื่อม MCP กับ Google Antigravity
+
+ใช้ได้กับ **Antigravity App, Antigravity IDE และ Antigravity CLI** ที่รันในเครื่อง Windows ให้เพิ่ม `-Client Json` ในคำสั่งติดตั้ง MCP ข้างต้น แล้วนำรายการ `unfair-engine` จาก `client-config.json` ไปใส่ใน `mcpServers` ของ `mcp_config.json` โดยเก็บรายการเดิมไว้
+
+ใน **Antigravity IDE** เปิดเมนู **… → MCP Servers → Manage MCP Servers → View raw config** ส่วน **Antigravity App** เปิด **Customizations → Installed → MCP Servers** แล้วใช้ **Copy Config File Path** ดูขั้นตอนของ CLI, Claude, Cursor, VS Code และการชี้ไปที่ Godot 4 ใน [คู่มือภาษาไทยฉบับเต็ม](https://github.com/reno0012x/Unfair-Engine/blob/main/Godot%20Engine/unfair/releases/README-Windows-th.md)
+
 หากต้องการอ่าน Scene และ Node ที่กำลังเลือกใน Editor ให้เปิดโปรเจกต์ แล้วกด **AI Assist → Connect → Copy MCP config** ดูวิธีลงทะเบียนการเชื่อมต่อนี้และวิธีตั้งค่า AI client อื่นในคู่มือภาษาไทยด้านบน
 
 ## สิ่งที่มีในรุ่นนี้
@@ -65,4 +71,4 @@ codex mcp list
 - AI Assistance แบบโค้งมน มี connection/activity status และ advanced settings พับได้
 - หน้าต่าง tools แยกได้ และรักษาการใช้ GDScript ตามเดิม
 
-ผู้ดาวน์โหลดต้องล็อกอิน GitHub ด้วยบัญชีที่มีสิทธิ์ในรีโป Private รุ่นนี้เป็น Developer Beta สำหรับ Windows x64 ที่ยังไม่ได้ลงลายเซ็นดิจิทัล
+รุ่นนี้เป็น Developer Beta สำหรับ Windows x64 ที่ยังไม่ได้ลงลายเซ็นดิจิทัล

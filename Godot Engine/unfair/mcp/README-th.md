@@ -14,13 +14,15 @@ powershell -ExecutionPolicy Bypass -File .\install.ps1 -UnfairPath 'C:\Users\You
 
 ค่าเริ่มต้นติดตั้งเฉพาะผู้ใช้ที่ `%LOCALAPPDATA%\Unfair\MCP\1.0.0-<release hash>` และเพิ่ม server ชื่อ `unfair-engine` ใน Codex ผ่าน `codex mcp add` ต้องมีคำสั่ง `codex` ใน PATH หรือระบุ `-CodexCommand 'C:\path\codex.exe'` โปรแกรมไม่ทับ MCP entry ที่เป็นของคนละการติดตั้ง
 
-ใช้กับ Cursor, Claude Desktop หรือ client อื่น:
+ใช้กับ Antigravity App, Antigravity IDE, Antigravity CLI, Cursor, Claude Desktop หรือ client อื่นที่รองรับ local MCP `stdio`:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\install.ps1 -Client Json -UnfairPath 'C:\path\Unfair.exe'
 ```
 
 นำ `mcpServers` จาก `client-config.json` ที่เครื่องมือติดตั้งแจ้ง ไปเพิ่มในการตั้งค่า MCP ของ client โดยรวมกับ server เดิม จากนั้นเปิดแชตใหม่หรือเริ่ม client ใหม่ ไม่ต้องเปิด server เองค้างไว้
+
+สำหรับ Antigravity IDE เปิด **… → MCP Servers → Manage MCP Servers → View raw config** แล้วเพิ่มเฉพาะรายการ `unfair-engine` ใน `mcp_config.json` ดูขั้นตอน App และ CLI ใน [คู่มือ Windows บน GitHub](https://github.com/reno0012x/Unfair-Engine/blob/main/Godot%20Engine/unfair/releases/README-Windows-th.md) และ [เอกสาร Google Antigravity](https://antigravity.google/docs/mcp)
 
 ## เครื่องมือ
 

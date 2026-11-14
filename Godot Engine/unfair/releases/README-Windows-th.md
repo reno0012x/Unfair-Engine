@@ -1,6 +1,6 @@
 # Unfair 4.8 Beta — Build 9 สำหรับ Windows x64
 
-ล็อกอิน GitHub ด้วยบัญชีที่มีสิทธิ์เข้ารีโป Private แล้วดาวน์โหลดจาก [หน้า Release](https://github.com/reno0012x/Unfair-Engine/releases/tag/v4.8.0-beta-unfair.9)
+ดาวน์โหลดตัวติดตั้งและ MCP ZIP จาก [หน้า GitHub Release](https://github.com/reno0012x/Unfair-Engine/releases/tag/v4.8.0-beta-unfair.9)
 
 ## แบบติดตั้ง — แนะนำ
 
@@ -42,9 +42,36 @@ codex mcp list
 
 หาก PowerShell หา `codex` ไม่เจอ ให้เพิ่ม `-CodexCommand 'C:\path\to\codex.exe'` ในคำสั่งติดตั้ง โดยใส่พาธจริงของ Codex CLI หากต้องการตรวจแพ็กเกจและพาธ Unfair ให้รัน `doctor.ps1` จากโฟลเดอร์ MCP ที่ตัวติดตั้งแจ้งไว้
 
-สำหรับ AI client อื่นที่รองรับ MCP stdio ให้เพิ่ม `-Client Json` ในคำสั่งติดตั้ง นำรายการจาก `client-config.json` ที่ตัวติดตั้งแจ้งไปเพิ่มในค่า `mcpServers` ของ client แล้วเปิด client ใหม่
-
 คำสั่งแก้ Scene ทำงานกับไฟล์ที่บันทึกบนดิสก์และอยู่นอกประวัติ Undo ของ Editor ให้บันทึก Scene ก่อนสั่งแก้ และโหลดไฟล์ใหม่ใน Editor หลังคำสั่งเสร็จ ดูรายชื่อเครื่องมือและข้อจำกัด UID ใน `README-th.md` ภายใน MCP ZIP
+
+## เชื่อม Google Antigravity และ AI client อื่น
+
+Unfair MCP ใช้ `stdio` บน Windows จึงตั้งค่าได้กับ **Antigravity App, Antigravity IDE และ Antigravity CLI** ตามรูปแบบ MCP ของ Google ให้รันคำสั่งนี้จากโฟลเดอร์ MCP ZIP ที่แตกแล้ว เพื่อสร้าง `client-config.json` โดยไม่ต้องใช้ Codex CLI
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\install.ps1 -Client Json -UnfairPath (Join-Path $env:LOCALAPPDATA 'Programs\Unfair\Unfair.exe')
+```
+
+หากติดตั้ง Unfair ไว้ที่อื่น ให้ส่งพาธจริงของ `Unfair.exe` ใน `-UnfairPath` เปิด `client-config.json` จากตำแหน่งที่สคริปต์พิมพ์ออกมา แล้วคัดลอกเฉพาะรายการ `unfair-engine` พร้อม `command`, `args` และ `env` เข้าไปใน `mcpServers` ของไฟล์ตั้งค่าปลายทาง โดยเก็บรายการเดิมของคุณไว้
+
+| โปรแกรม | เปิดการตั้งค่า MCP |
+| --- | --- |
+| Antigravity App | **Customizations → Installed → MCP Servers → Copy Config File Path** เปิดไฟล์ตามพาธที่ได้ |
+| Antigravity IDE | ในแผง Agent เลือก **… → MCP Servers → Manage MCP Servers → View raw config** |
+| Antigravity CLI | ใช้ `~/.gemini/config/mcp_config.json` สำหรับทุกโปรเจกต์ หรือ `.agents/mcp_config.json` สำหรับ workspace เดียว ใช้ `/mcp` เพื่อโหลด config ใหม่และดูสถานะ |
+
+บันทึกไฟล์แล้วเปิด client ใหม่หรือรีสตาร์ต MCP จากเมนูที่มี จากนั้นลองสั่ง “ใช้ `unfair-engine` เรียก `get_engine_diagnostics` แล้วบอกเวอร์ชันและพาธ Unfair” ตรวจแล้วว่า config ที่ตัวติดตั้งสร้างสามารถเปิด MCP ผ่าน `stdio` และเรียกเครื่องมือนี้ได้บน Windows x64 ส่วนขั้นตอนใน Antigravity อ้างอิงจากเอกสารของ Google [เอกสาร MCP ของ Google Antigravity](https://antigravity.google/docs/mcp)
+
+ใช้ `client-config.json` ชุดเดียวกันเป็นต้นทางได้สำหรับ client อื่นที่เปิดโปรเซส `stdio` บนเครื่องเดียวกับ Engine
+
+- **Claude Desktop** รวมรายการใน `mcpServers` ของ `%APPDATA%\Claude\claude_desktop_config.json` แล้วปิดและเปิดแอปใหม่ ส่วน **Claude Code** รองรับ config โปรเจกต์ใน `.mcp.json` [คู่มือ Claude Code](https://code.claude.com/docs/en/mcp) · [คู่มือ Claude Desktop](https://py.sdk.modelcontextprotocol.io/get-started/real-host/)
+- **Cursor** รวมรายการใน `mcpServers` ของ `.cursor/mcp.json` และระบุ `"type": "stdio"` หากแอปต้องการ [คู่มือ Cursor](https://cursor.com/docs/mcp)
+- **VS Code / GitHub Copilot** เลือก **MCP Servers → Add Server** ในการตั้งค่า Agent แล้วนำ `command`, `args` และ `env` ไปใส่ในรายการชนิด `stdio` ตามรูปแบบของ VS Code [คู่มือ VS Code](https://code.visualstudio.com/docs/agents/reference/mcp-configuration)
+- **ChatGPT บนเว็บ** ใช้การเชื่อมต่อกับเซิร์ฟเวอร์ระยะไกล การตั้งค่า `stdio` ใน ZIP นี้ใช้กับ client บนเครื่อง [คู่มือ OpenAI](https://help.openai.com/en/articles/12584461)
+
+### ใช้ MCP กับ Godot 4
+
+กำหนด `env.UNFAIR_PATH` ให้เป็นพาธของ Godot 4 `.exe` ที่ต้องการใช้ ถ้าใช้ Unfair และ Godot ควบคู่กัน ให้เก็บรายการ `unfair-engine` ของ Unfair ไว้ แล้วเพิ่มสำเนาชื่อ `godot-engine` ที่ชี้ไป Godot ตรวจทั้งพาธและเวอร์ชันด้วย `get_engine_diagnostics` ก่อนสั่งรันหรือแก้โปรเจกต์ ชุดเครื่องมือผ่านการทดสอบกับ Unfair 4.8 ส่วนความเข้ากันได้กับ Godot ขึ้นกับเวอร์ชันและโปรเจกต์ โดยเครื่องมือ UID ต้องใช้ 4.4 ขึ้นไป
 
 ## เชื่อม AI Assistance เพื่ออ่านข้อมูลจาก Editor
 
@@ -68,6 +95,7 @@ codex mcp add unfair-live -- $unfairLive.command @unfairLiveArgs
 
 - แบบ installer: ใช้ Start Menu → Unfair → Uninstall หรือ `Uninstall.exe`
 - MCP: ใช้ `uninstall.ps1` จากโฟลเดอร์ MCP ที่ติดตั้งจริง; `doctor.ps1` ใช้ตรวจไฟล์
+- หากเพิ่ม MCP เองผ่าน `-Client Json` ให้ลบรายการที่เพิ่มใน client ด้วย
 - เก็บโปรเจกต์เกมไว้นอกโฟลเดอร์โปรแกรมเสมอ ไม่ต้องถอน/ลบโปรเจกต์เพื่ออัปเกรด
 
 ## ตรวจไฟล์
